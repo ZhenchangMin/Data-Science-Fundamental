@@ -1,0 +1,90 @@
+# Lec1 Course Intro
+
+Probability and Statistics for Computer Science
+
+## Sample Problems
+
+### Fair Coins from Biased
+
+John von Neumann (1951): “Suppose you are given a coin for which the probability of HEADS, say p, is **unknown**. How can you use this coin to generate unbiased (fair) coin-flips.”
+Construct two equally probable events (without knowing p):
+
+- Flip the coin twice and check the pair:
+- If the pair is (H, T): Treat this as a "fair Heads" (output H).
+- If the pair is (T, H): Treat this as a "fair Tails" (output T).
+- If the pair is (H, H) or (T, T): Discard the pair (it’s useless for fairness) and start over with two new flips.
+
+### The Two Child Problem
+
+Martin Gardner (1959): "Knowing that I have two children and at least one of them is girl, what is the probability that both children are girls?"
+Understand the probability space:
+(M, M), (M, F), (F, M), (F, F)
+So the answer is 1/3.
+
+### Monty Hall Problem(three doors problem)
+
+Whether the host opens the door with a car or a goat, and whether to switch the door.
+
+### Bertrand Paradox
+
+What is the probability that a random chord of a circle, is longer than the side of a equilateral triangle inscribed in a circle?
+Method I: Keep one point fixed, and move the other point to form random chords. And this prob = 1/3.
+Method II: get one equilateral triangle inscribed in a circle, then get perpendicular bisector of one side of the triangle, and the chord moves on the bisector. And this prob is 1/2.
+
+This paradox differs because they are two different ways to get a random chord, and The notion of "random chord of a
+circle" shall be more rigorously defined.
+
+### Buffon's Needle Problem
+
+![Buffon's Needle Problem](BuffonProblem.png)
+
+## Probability Space
+
+### Sample Space
+Sample Space $\Omega$: set of all possible outcomes of an experiment(set of **samples**)
+Example: all sides of a dice; all outcomes of a sequence of coin tosses;...
+$2^{\Omega}$: The collection of all possible subsets of $\Omega$—including the empty set and Omega itself.
+A family $\Sigma\subseteq 2^\Omega$ of subsets of $\Omega$ called **events**, satisfy:
+- $\Phi$ is the impossible event
+- $\Omega$ is the certain event
+- If $A$ is an event, then $A^{c}$ is an event
+- If $A_1, A_2, \dots, A_n \in \Sigma$, then $A_1 \cap A_2 \cap \dots \cap A_n \in \Sigma$
+- If $A_1, A_2, \dots, A_n \in \Sigma$, then $A_1 \cup A_2 \cup \dots \cup A_n \in \Sigma$
+
+### $\sigma$-Algebra
+A family $\Sigma$ of subsets of $\Omega$ is called a **$\sigma$-algebra** if:
+- $\Phi \in \Sigma$
+- $\Omega \in \Sigma$
+- If $A \in \Sigma$, then $A^{c} \in \Sigma$, $A^{c} = \Omega \setminus A$, in omega and not in A.
+- If $A_1, A_2, \dots, A_n \in \Sigma$, then $A_1 \cup A_2 \cup \dots \cup A_n \in \Sigma$
+
+### Probability Measure
+Let $\Sigma\subseteq 2^\Omega$ be a $\sigma$-algebra.
+A probability measure (also called probability law) Pr on sample space $\Omega$ (with events $\Sigma$) is a function Pr : $\Sigma\rightarrow$[0,1] satisfying:
+- Normalized: $Pr(\Omega) = 1$
+- Additive for disjoint $A_{1}, A_{2}, \dots\in\Sigma$ : Pr($\cup_{i}A_{i}$) = $\Sigma_{i}Pr(A_{i})$
+
+The triple $(\Omega, \Sigma, Pr)$ is called a **probability space**.
+
+### Basic Properties of Probability
+- Pr($A^{c}$) = 1 - Pr($A$)
+- Pr($\Phi$) = 0
+- Pr($\Omega$) = 1
+- Pr(A\B) = Pr(A) - Pr($A\cap B$)
+- $A\subseteq B$ $\rightarrow$ Pr($A$) $\leq$ Pr($B$)
+- Pr($A_1 \cup A_2 \cup \dots \cup A_n$) = Pr($A_1$) + Pr($A_2$) + $\dots$ + Pr($A_n$)
+
+### Union Bond
+Also known as Boole's inequality.
+for events $A_1, A_2, \dots, A_n \in \Sigma$:
+Pr($\cup_{i}A_{i}$) $\leq$ $\Sigma_{i}Pr(A_{i})$
+Example: A machine has parts, each of which breaks down with probability $p$.
+What is the probability that the machine will work?
+Pr[All parts are fine] = 1 - Pr[At least one part breaks down] $\leq 1-np$
+
+### Principles of Inclusion-Exclusion
+
+### Derangement
+
+### Classical Examples of Probability Space
+#### Classic Probability
