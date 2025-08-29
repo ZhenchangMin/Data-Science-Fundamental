@@ -83,8 +83,17 @@ What is the probability that the machine will work?
 Pr[All parts are fine] = 1 - Pr[At least one part breaks down] $\leq 1-np$
 
 ### Principles of Inclusion-Exclusion
+For events $A_1, A_2, \dots, A_n \in \Sigma$:
+Pr($\cup_{i}A_{i}$) = $\Sigma_{i}Pr(A_{i})$ - $\Sigma_{i<j}Pr(A_{i}\cap A_{j})$ + $\Sigma_{i<j<k}Pr(A_{i}\cap A_{j}\cap A_{k})$ - $\dots$=
+$\Sigma_{i=1}^n(-1)^{n-i}Pr(A_1\cap A_2\cap \dots \cap A_i)$
 
 ### Derangement
+The probability that a random permutation has no fixed point, there is no i that $\pi(i) = i$.
+Pr gets to $\frac{1}{e}$ when n gets to infinity.
 
 ### Classical Examples of Probability Space
 #### Classic Probability
+For finite sample space $\Omega$, each outcome $a\in\Omega$ has equal probability.
+Pr($a$) = $\frac{|A|}{|\Omega|}$
+#### Geometric Probability
+continuous probability space where is $Pr(A)$calculated as some geometric measure of $A$
