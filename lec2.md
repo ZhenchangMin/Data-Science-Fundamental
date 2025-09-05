@@ -39,3 +39,18 @@ $Pr(\cap_{i=1}^{n} A_{i}) = \prod_{i=1}^{n} Pr(A_{i}|\cap_{j<i}A_j)$
 
 ## Law of Total Probability
 $Pr(A) = \sum_{B \in \Sigma} Pr(A|B)Pr(B)$
+
+## Bayes' Law
+$Pr(A|B) = \frac{Pr(B|A)Pr(A)}{Pr(B)}$
+
+## Independence
+The occurrence of event B changes the probability of event A, from Pr(A) to Pr(A | B)
+When A and B are independent, $Pr(A|B) = Pr(A)$
+And $Pr(A \cap B) = Pr(A)Pr(B)$
+
+### Conditional Independence
+$Pr(A \cap B | C) = Pr(A | C)Pr(B | C)$
+
+### Independence of Several Events
+$Pr(A \cap B \cap C) = Pr(A)Pr(B)Pr(C)$
+$Pr(\cap_{i=1}^{n} A_{i}) = \prod_{i=1}^{n} Pr(A_{i})$
