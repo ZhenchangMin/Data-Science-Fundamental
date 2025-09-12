@@ -5,3 +5,9 @@
 Every sample in sample space is mapped to a real number.
 
 ### Distribution
+![1757661317562](image/lec3/1757661317562.png)
+
+### Discrete Random Variable
+
+
+### Continuous Random Variable
