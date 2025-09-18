@@ -96,9 +96,24 @@ For events $A_1, A_2, \dots, A_n \in \Sigma$:
 Pr($\cup_{i}A_{i}$) = $\Sigma_{i}Pr(A_{i})$ - $\Sigma_{i<j}Pr(A_{i}\cap A_{j})$ + $\Sigma_{i<j<k}Pr(A_{i}\cap A_{j}\cap A_{k})$ - $\dots$=
 $\Sigma_{i=1}^n(-1)^{n-i}Pr(A_1\cap A_2\cap \dots \cap A_i)$
 
+Another representation: $\Pr(\bigcup_{i = 1}^{n}A_i)=\sum_{k = 1}^{n}(-1)^{k - 1}\sum_{S \in \binom{\{1,2,\cdots,n\}}{k}}\Pr(\bigcap_{i \in S}A_i)$
+$\sum_{S \in \binom{\{1,2,\cdots,n\}}{k}}\Pr(\bigcap_{i \in S}A_i)$ means that we select $k$ events from $n$ events and calculate the probability that all $k$ events happen. All selections should be calculated.
+
 ### Derangement
 The probability that a random permutation has no fixed point, there is no i that $\pi(i) = i$.
 Pr gets to $\frac{1}{e}$ when n gets to infinity.
+
+The total permutations of n elements is n!.
+To get the probability of derangement, we need to count the number of derangements.
+
+Let $A_i$ representing the event that $\pi(i) = i$.
+We use Inclusion-Exclusion Principle, when at least 1 element sits in its original place:
+$Pr(\cup_{i=1}^nA_i) = \sum_{k=1}^n(-1)^{k-1}\sum_{S \in \binom{\{1,2,\cdots,n\}}{k}}\Pr(\bigcap_{i \in S}A_i)$
+For$\sum_{S \in \binom{\{1,2,\cdots,n\}}{k}}\Pr(\bigcap_{i \in S}A_i)$ ，selecting k elements from n elements, making all k elements in their original place, so the rest n-k elements can be randomly placed, (n-k)!
+
+$\Pr(\bigcup_{i = 1}^{n}A_i)=\sum_{k = 1}^{n}\binom{n}{k}(-1)^{k - 1}\frac{(n - k)!}{n!}$ ，further eliminated to $-\sum_{k = 1}^{n}\frac{(-1)^{k}}{k!}$
+
+So the probability of derangement $Pr(\bigcap_{i = 1}^{n}A_i^c) = 1 - Pr(\bigcup_{i = 1}^{n}A_i) = 1+\sum^n_{k=1}\frac{(-1)^k}{k!}=\sum_{k=0}^n\frac{(-1)^k}{k!}$
 
 ### Classical Examples of Probability Space
 #### Classic Probability
