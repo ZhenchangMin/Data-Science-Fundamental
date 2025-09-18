@@ -41,10 +41,17 @@ circle" shall be more rigorously defined.
 ## Probability Space
 
 ### Sample Space
-Sample Space $\Omega$: set of all possible outcomes of an experiment(set of **samples**)
-Example: all sides of a dice; all outcomes of a sequence of coin tosses;...
-$2^{\Omega}$: The collection of all possible subsets of $\Omega$—including the empty set and Omega itself.
-A family $\Sigma\subseteq 2^\Omega$ of subsets of $\Omega$ called **events**, satisfy:
+Sample Space $\Omega$: **set** of **all possible outcomes** of an experiment(set of **samples**)
+Example: all six sides of a dice; all outcomes of a sequence of coin tosses;...
+Each $\omega \in \Omega$ is called a **sample** or **outcome** of the experiment.
+An **event** is a subset A of $\Omega$.
+
+For **discrete probability space** (where Ω is finite or countably infinite):
+- probability mass function (pmf) p: $\Omega \rightarrow[0,1]$, satisfying $\Sigma_{\omega \in \Omega}p(\omega)=1$
+- the probability of event $A\subseteq \Omega$ is given by $Pr(A) = \Sigma_{\omega \in A}p(\omega)$
+
+$2^{\Omega}$: The collection of **all possible subsets** of $\Omega$, including the empty set and Omega itself.
+
 - $\Phi$ is the impossible event
 - $\Omega$ is the certain event
 - If $A$ is an event, then $A^{c}$ is an event
@@ -52,11 +59,13 @@ A family $\Sigma\subseteq 2^\Omega$ of subsets of $\Omega$ called **events**, sa
 - If $A_1, A_2, \dots, A_n \in \Sigma$, then $A_1 \cup A_2 \cup \dots \cup A_n \in \Sigma$
 
 ### $\sigma$-Algebra
-A family $\Sigma$ of subsets of $\Omega$ is called a **$\sigma$-algebra** if:
+A family $\Sigma$: subsets of $\Omega$ is called a **$\sigma$-algebra** if:
 - $\Phi \in \Sigma$
 - $\Omega \in \Sigma$
 - If $A \in \Sigma$, then $A^{c} \in \Sigma$, $A^{c} = \Omega \setminus A$, in omega and not in A.
 - If $A_1, A_2, \dots, A_n \in \Sigma$, then $A_1 \cup A_2 \cup \dots \cup A_n \in \Sigma$
+
+Examples: $\Sigma = \{ \Phi, \Omega, A, A^{c}\}$
 
 ### Probability Measure
 Let $\Sigma\subseteq 2^\Omega$ be a $\sigma$-algebra.
