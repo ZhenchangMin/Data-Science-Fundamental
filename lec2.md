@@ -34,13 +34,31 @@ Proof:
 The probability of an event $A$ given that $B$ has occurred is defined as $Pr(A|B) = \frac{Pr(A \cap B)}{Pr(B)}$.
 $Pr(B)$ must be greater than 0.
 
-## Chain Rule
-$Pr(\cap_{i=1}^{n} A_{i}) = \prod_{i=1}^{n} Pr(A_{i}|\cap_{j<i}A_j)$
+### Fair Coin
+Let's say a coin whose probability of landing heads is $p$, unknown, how to generate an unbiased coin-flip?
+We can flip the coin twice, if the result is HH or TT, we flip it again.
+If the result is HT or TH, we output the result.
+This is a conditional probability, and we can prove it:
+$Pr(HT|\{HT,TH\}) = Pr(TH|\{HT,TH\}) = \frac{p(1-p)}{2p(1-p)}=\frac{1}{2}$
 
-## Law of Total Probability
+### The Two Child Problem
+Knowing that I have two children and at least one of them is girl, what is the probability that both children are girls?
+$Pr(Both | AtLeastOneGirl) = \frac{Pr\{GG\}}{Pr\{GG,GB,BG\}} = \frac{\frac{1}{4}}{\frac{3}{4}} = \frac{1}{3}$
+
+## Laws of Conditional Probability
+$Pr(A \cup C) \leq Pr(A) + Pr(C)$ translates to the new fact 
+$P(A \cup C | B) \leq P(A | B) + P(C | B)$.
+
+### Chain Rule
+$Pr(\cap_{i=1}^{n} A_{i}) = Pr(A_{1})Pr(A_2|A_1)Pr(A_3|A_1\cap A_2)\dots Pr(A_n|\cap_{i=1}^{n-1}A_i)$
+
+#### Birthday Paradox
+
+
+### Law of Total Probability
 $Pr(A) = \sum_{B \in \Sigma} Pr(A|B)Pr(B)$
 
-## Bayes' Law
+### Bayes' Law
 $Pr(A|B) = \frac{Pr(B|A)Pr(A)}{Pr(B)}$
 
 ## Independence
