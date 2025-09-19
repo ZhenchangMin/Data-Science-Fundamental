@@ -36,7 +36,7 @@ circle" shall be more rigorously defined.
 
 ### Buffon's Needle Problem
 
-![Buffon's Needle Problem](BuffonProblem.png)
+![Buffon's Needle Problem](image\lec1\BuffonProblem.png)
 
 ## Probability Space
 

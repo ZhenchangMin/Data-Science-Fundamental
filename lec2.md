@@ -52,11 +52,9 @@ $P(A \cup C | B) \leq P(A | B) + P(C | B)$.
 ### Chain Rule
 $Pr(\cap_{i=1}^{n} A_{i}) = Pr(A_{1})Pr(A_2|A_1)Pr(A_3|A_1\cap A_2)\dots Pr(A_n|\cap_{i=1}^{n-1}A_i)$
 
-#### Birthday Paradox
-
-
 ### Law of Total Probability
-$Pr(A) = \sum_{B \in \Sigma} Pr(A|B)Pr(B)$
+Let $B_1, B_2\dots B_n$ be a partition of $\Omega$, and $Pr(B_i)>0$ for all i
+$Pr(A) = \sum_{i=1}^n Pr(A\cap B_i) = \sum_{i=1}^n Pr(A|B_i)Pr(B_i)$
 
 ### Bayes' Law
 $Pr(A|B) = \frac{Pr(B|A)Pr(A)}{Pr(B)}$
@@ -64,11 +62,16 @@ $Pr(A|B) = \frac{Pr(B|A)Pr(A)}{Pr(B)}$
 ## Independence
 The occurrence of event B changes the probability of event A, from Pr(A) to Pr(A | B)
 When A and B are independent, $Pr(A|B) = Pr(A)$
-And $Pr(A \cap B) = Pr(A)Pr(B)$
+i.e. $Pr(A \cap B) = Pr(A)Pr(B)$
+
+If A and B are independent, so are A and $B^c$.
 
 ### Conditional Independence
 $Pr(A \cap B | C) = Pr(A | C)Pr(B | C)$
+i.e. $Pr(A|B\cap C)=Pr(A|C)$
 
 ### Independence of Several Events
 $Pr(A \cap B \cap C) = Pr(A)Pr(B)Pr(C)$
 $Pr(\cap_{i=1}^{n} A_{i}) = \prod_{i=1}^{n} Pr(A_{i})$
+
+## Product Probability Space
