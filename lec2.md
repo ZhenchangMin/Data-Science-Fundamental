@@ -75,3 +75,21 @@ $Pr(A \cap B \cap C) = Pr(A)Pr(B)Pr(C)$
 $Pr(\cap_{i=1}^{n} A_{i}) = \prod_{i=1}^{n} Pr(A_{i})$
 
 ## Product Probability Space
+Product Probability Space is a probability space constructed from a sequence of **independent experiments**.
+Consider discrete probability spaces $(\Omega_1, p_1), (\Omega_2, p_2), \dots, (\Omega_n, p_n)$
+The product probability space $(\Omega, p)$ is defined as $( \Omega_1 \times \Omega_2 \times \dots \times \Omega_n, p_1 \times p_2 \times \dots \times p_n )$. **cartesian product** to form the sample space.
+
+Experiments are independent, so p would be the product of the individual probabilities.
+$\forall \omega\in\Omega, p(\omega) = p_1(\omega_1) \times p_2(\omega_2) \times \dots \times p_n(\omega_n)$
+
+What is a probability mass function?
+Would be discussed in lec3!
+Used to describe probability measure for discrete random variables.
+
+## Limited Independence
+We need to clarify two kinds of independence: Pairwise independence and Mutual independence.
+![1758241124539](image/lec2/1758241124539.png)
+Mutually independent events must be pairwise independent.
+Pairwise independence insures that any two events are independent, while not concluding multi-events.
+![1758241346188](image/lec2/1758241346188.png)
+Like in this case, D and E, D and F, E and F are pairwise independent, but not mutually independent, cuz $Pr(D\cap E\cap F)=Pr(D)Pr(E)Pr(F)$ is not right
