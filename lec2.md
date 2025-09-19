@@ -93,3 +93,7 @@ Mutually independent events must be pairwise independent.
 Pairwise independence insures that any two events are independent, while not concluding multi-events.
 ![1758241346188](image/lec2/1758241346188.png)
 Like in this case, D and E, D and F, E and F are pairwise independent, but not mutually independent, cuz $Pr(D\cap E\cap F)=Pr(D)Pr(E)Pr(F)$ is not right
+
+![1758241733298](image/lec2/1758241733298.png)
+
+## Error-Reduction
