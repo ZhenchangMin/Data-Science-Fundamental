@@ -97,3 +97,43 @@ Like in this case, D and E, D and F, E and F are pairwise independent, but not m
 ![1758241733298](image/lec2/1758241733298.png)
 
 ## Error-Reduction
+
+### Decision problem
+Given a binary sequence of any length $\{0,1\}^*$, and output 0 or 1.
+Example: input a binary form of a number and output whether it is a prime number.
+
+### One-sided error
+Monte Carlo randomized algorithm $\mathcal{A}$ whose core is one-sided error.
+
+One-sided error: If the right answer is 1, i.e. f(x)=1, $\mathcal{A}$ always outputs 1 (no error)
+If the right answer is 0, i.e. f(x)=0, $\mathcal{A}$ may output 0 with probability $Pr(\text{correct}) \geq p$
+That is, the probability of $\mathcal{A}$ outputting 1 when f(x)=0 is at most $1-p$, and this is the probability of error.
+As the error only happens on the side when correct answer is 0 while outputting 1 incorrectly.
+On the other side the algorithm works very well.
+
+### Strategy to Reduce Error
+Let $\mathcal{A}^n$ be the algorithm $\mathcal{A}$ run $n$ times independently, and return $\bigwedge$ of the $n$ outputs.
+
+When the correct answer is 0, the probability of the new algorithm $\mathcal{A}^n$ outputting 1 $Pr(\mathcal{A}^n(x)=1)\leq(1-p)^n$, because every run outputting 1 has a probability not bigger than $1-p$, and n runs are done independently.
+
+To get the error probability $(1-p)^n \leq\epsilon$, the times $n$ needs to satisfy:
+$n≈\frac{1}{p}\ln(1/\epsilon)$ (use Taylor expansion of $ln(1-p)$)
+
+## Binomial Probability
+Consider independent tosses of a coin, in which each coin toss returns HEADs independently with probability $p$.
+We say that we have a sequence of **Bernoulli trials**, in which each trial succeeds with probability $p$.
+![1758438169960](image/lec2/1758438169960.png)
+
+## Error-Reduction(two-sided case)
+Now we've got an algorithm $\mathcal{A}$ which could make error on both sides.
+Assume $f(x)$ is the right answer, and $\mathcal{A}(x)$ is the algorithm output.
+$Pr(\mathcal{A}(x)=f(x))\geq\frac{1}{2}+p$, slightly bigger than 1/2
+
+Let $\mathcal{A}^n$ be running $\mathcal{A}$ $n$ times and return the **majority** of the n outputs(like in 5 runs it returns 1 for 3 times, then return 1 for $\mathcal{A}^5$)
+
+$Pr(\mathcal{A}^n(x)\neq f(x))\leq\sum_{k<\frac{n}{2}}$
+$k<\frac{n}{2}$ means that the times of getting right answers is less than half, so getting majority would return an error.
+Like in `5` runs, if $f(x)=1$, and we got `0` for 3 or 4 or 5 times, then $\mathcal{A}^5(x)$ would return 0, which is an error, and `k` as the successful number of runs, would be 2, 1 and 0 respectively.
+
+Further execute on the inequality we would get close to $Pr(\mathcal{A}^n(x)\neq f(x))\leq exp(-p^2n)$
+To make the error rate smaller than $\epsilon$, we need $n\geq\frac{1}{p^2}\ln(1/\epsilon)$
