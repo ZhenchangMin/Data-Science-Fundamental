@@ -133,3 +133,9 @@ X=I(A)\begin{cases}
 $$
 
 ### Binomial Distribution
+$X$: number of successes in $n$ i.i.d. (independent and identically distributed) Bernoulli trials with parameter $p$
+A binomial random variable $X$ takes value in $\{0,1,\dots n\}$, and its pmf is:
+$$
+p_{X}(k)=Pr(X=k)=\binom{n}{k}p^k(1-p)^{n-k},\text{if } k=0,1,2,\dots,n
+$$
+We say that $X$ follows the **binomial distribution** with parameters $n$ and $p$, denoted $X\sim B(n,p)$ or $B(n,p)$.
