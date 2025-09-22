@@ -139,3 +139,24 @@ $$
 p_{X}(k)=Pr(X=k)=\binom{n}{k}p^k(1-p)^{n-k},\text{if } k=0,1,2,\dots,n
 $$
 We say that $X$ follows the **binomial distribution** with parameters $n$ and $p$, denoted $X\sim B(n,p)$ or $B(n,p)$.
+
+### Geometric Distribution
+$X$: number of Bernoulli trials until the first success in i.i.d. Bernoulli trials with parameter $p$
+
+Example: trials needed to get one HEADS in a sequence of coin flips
+
+A geometric random variable $X$ takes value in $\{1,2,\dots\}$, and its pmf is:
+$$
+p_{X}(k)=Pr(X=k)=(1-p)^{k-1}p,\text{if } k=1,2,\dots
+$$
+We say that $X$ follows the **geometric distribution** with parameter $p\in[0,1]$, denoted $X\sim Geo(p)$ or $Geometric(p)$.
+
+Geometric distribution is memoryless: for $k\geq 1$,$n\geq 0$
+$$
+Pr(X=k+n|X>n)=Pr(X= k)
+$$
+That is, if we didn't get a success in the first $n$ trials, the probability of getting a success in the next $k$ trials is the same as the probability of getting a success in the very beginning $k$ trials.
+This is like having no memory cuz past trials don't affect the future trials.
+![proof](image/lec3/1758535158439.png)
+Geometric distribution is the only **discrete memoryless distribution** with the range of values $\{1,2,\dots\}$.
+
