@@ -78,3 +78,58 @@ $$
 For general random variables, replace $X_i=x_i$ with $X_i\leq x_i$, and we got the definition of independence.
 
 ### Random Vector
+Given $(\Omega, \Sigma, Pr)$, a random vector $X=(X_1,X_2,\dots,X_n)$ is a vector composed of multiple random variables $X_i$
+
+The **joint CDF** $F_X(x_1,x_2,\dots,x_n)$ is defined as:
+$$
+F_X(x_1,x_2,\dots,x_n)=Pr(X_1\leq x_1 \cap X_2\leq x_2 \cap \dots \cap X_n\leq x_n)
+$$
+This can be viewed as a joint probability when all sub-random variables are no more than the given values, so we use \cap to join them together.
+
+For discrete random vector, the **joint mass function** (PMF) is defined as:
+$$
+p_{(X_1,X_2,\dots,X_n)}(x_1, x_2,\dots,x_n)=Pr(X_1=x_1 \cap X_2=x_2\dots X_n=x_n)
+$$
+
+The marginal distribution of $X_i$ in $X=(X_1,X_2,\dots,X_n)$ is defined as:
+$$
+p_{X_i}(x_i)=\sum_{x_1,\dots x_{i-1}, x_{i+1}, \dots,x_n} p_{(X_1\dots X_n)}(x_1\dots x_n)
+$$
+
+![1758505190071](image/lec3/1758505190071.png)
+In this case, we wonna calculate the marginal distribution, then we just sum up one line or a column and we could get the answer.
+Like in column1, we want to get $p_{X_1}(x_1)$, so we view $Y$ as another random variable and add up all pmf in column1.
+
+## Discrete Random Vector
+
+### Probability Mass Function (PMF)
+- As histogram: $p_{X}$ can be viewed as the histogram of the probability distribution.
+- As vector: $p_{X}$ can be viewed as a vector $p_{X}\in[0,1]^{R}$, where R is the set of all possible values of $X$, and the sum of $x_i$ in $p_{X}$ is 1.
+
+If $Y=f(X)$, Y is also a random variable, and its pmf is:
+$$
+p_{Y}(y)=\sum_{x: f(x)=y}p_{X}(x)
+$$
+That is the sum of all pmf where $f(x)=y$.
+
+### Bernoulli Trial
+A bernoulli trial is an experiment with two possible outcomes: success or failure.
+A **bernoulli random variable** $X$ takes in values in $\{0,1\}$, and its pmf is:
+$$
+p_{X}(k)=Pr(X=k)=
+\begin{cases}
+p,&\text{if } k=1\\
+1-p,&\text{if } k=0
+\end{cases}
+$$
+where $p$ is a parameter representing the probability of success.
+
+Indicator: For event $A$, its indicator random variable $X$ is defined as:
+$$
+X=I(A)\begin{cases}
+1,&\text{if } A\\
+0,&\text{if } \neg A
+\end{cases}
+$$
+
+### Binomial Distribution
