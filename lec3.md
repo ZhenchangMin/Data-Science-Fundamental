@@ -160,3 +160,32 @@ This is like having no memory cuz past trials don't affect the future trials.
 ![proof](image/lec3/1758535158439.png)
 Geometric distribution is the only **discrete memoryless distribution** with the range of values $\{1,2,\dots\}$.
 
+### Sum of Independent Random Variables
+If random variables $X$ and $Y$ are independent, then $X+Y$ satisfies:
+
+$p_{X+Y}(z)=Pr(X+Y=z)=\sum_x Pr(X=x\cap Y=z-x)$, using total probability and sum up all possible pairs $(x,y)$ where $x+y=z$.
+Then by independence we get:
+$$
+p_{X+Y}(z)=Pr(X+Y=z)=\sum_x Pr(X=x\cap Y=z-x)=\sum_x p_{X}(x)p_{Y}(z-x)
+$$
+
+This defines the **convolution** of two random variables, denoted as $p_{X+Y}=p_{X}*p_{Y}$.
+
+### Negative Binomial Distribution
+Can be viewed as “**multiple successes**” generalization of geometric distribution
+$X$: number of **failures** in a sequence of i.i.d. Bernoulli trials before $r$ successes
+A negative binomial random variable $X$ takes value in $\{0,1,2,\dots\}$, and its pmf is:
+$$
+p_{X}(k)=Pr(X=k)=\binom{k+r-1}{k}p^r(1-p)^k=(-1)^k\binom{-r}{k}p^r(1-p)^k,\text{if } k=0,1,2,\dots
+$$
+We say that $X$ follows the **negative binomial distribution** with parameters $r$ and $p$, denoted $X\sim NegBin(r,p)$
+
+As the last trial must be a success, so total is $r-1$ successes and $k$ failures, so choose $k$ from $r-1+k$ trials.
+
+Negative Binomial Distribution can be generated from Geometric Distribution:
+$$
+X=(X_1-1)+(X_2-1)+\dots+(X_r-1), \text{for i.i.d. } X_i\sim Geo(p)
+$$
+As we only need the number of failures, we need to subtract 1 from each $X_i$ to subtract the success numbers.
+
+### Hypergeometric Distribution
