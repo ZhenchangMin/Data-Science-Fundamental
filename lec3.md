@@ -189,3 +189,16 @@ $$
 As we only need the number of failures, we need to subtract 1 from each $X_i$ to subtract the success numbers.
 
 ### Hypergeometric Distribution
+$X$: number of successes in $n$ draws, **without replacement**, from a **finite population** of $N$ objects, including exactly $M$ ones counted as successes.
+
+Like in a jar we have $N$ balls in total, and $M$ of them are red, we draw $n$ balls **witout replacement** and count the number of red balls as successes.
+
+A hypergeometric random variable $X$ takes value in $\{0, 1\dots n\}$ and
+$$
+p_X(k)=Pr(X=k)=\frac{\binom{M}{k}\binom{N-M}{n-k}}{\binom{N}{n}},k=0,1\dots n
+$$
+We say that $X$ follows the **hypergeometric distribution** with parameters $N$, $M$, $n$,
+where N ≥ 0, 0 ≤ M ≤ N, and 0 ≤ n ≤ N are integers.
+
+### Multinomial Distribution
+“multi-dimensional” generalization of binomial distribution
