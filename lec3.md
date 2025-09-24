@@ -208,3 +208,23 @@ where N ≥ 0, 0 ≤ M ≤ N, and 0 ≤ n ≤ N are integers.
 Modelize: **Balls-into-bin model**: Throw $n$ balls into $m$ bins, where each bin has probability $p_i$ of receiving the ball.
 Let $X_i$ be the number of balls in the $i$th bin.
 
+Easily we know $p_1+p_2+\dots+p_m=1$.
+
+Now we create a random vector $X=(X_1,X_2,\dots,X_m)$ where $X_i$ is the number of balls in the $i$th bin.
+Easily we know $X=(X_1,X_2,\dots,X_m)$ takes value $(k_1\dots k_m)\in\{0,1,\dots n\}^m$ satisfying $\sum k_i=n$
+And we have:
+$$
+p_{(X_1,X_2,\dots,X_m)}(k_1,k_2,\dots,k_m)=Pr(\bigcap_{i=1}^m(X_i=k_i))=\frac{n!}{k_1!k_2!\dots k_m!}p_1^{k_1}p_2^{k_2}\dots p_m^{k_m}
+$$
+How we get this equation?
+Firstly suppose we get the result in a certain order, i.e. $X=(X_1,X_2,\dots,X_m)$, so we get $p_1^{k_1}p_2^{k_2}\dots p_m^{k_m}$
+And then we need to calculate how many orders to get the final answer.
+This can be viewed as we distribute $n$ places for $m$, in which $k_1$ for $X_1$, $k_2$ for $X_2$, $\dots$, $k_m$ for $X_m$.
+So $n!$ would be all possible orders, and we divide $k_i!$ because we change the location of inline places does not create new order, so we divide them.
+![1758728421077](image/lec3/1758728421077.png)
+We say that $(X_1,X_2,\dots,X_m)$ follows the **multinomial distribution** with parameters $m$, $n$ and $p=(p_1,p_2,\dots,p_m)\in[0,1]^m$ such that $p_1+p_2+\dots p_m=1$
+For each individual $1\leq i\leq m$, $X_i$ follows the **binomial distribution** with parameters $n$ and $p_i$.
+$$
+X_i\sim Bin(n,p_i)
+$$
+The marginal distribution of $X_i$ is $Bin(n,p_i)$.
