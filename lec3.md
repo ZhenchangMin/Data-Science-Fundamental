@@ -202,3 +202,9 @@ where N ≥ 0, 0 ≤ M ≤ N, and 0 ≤ n ≤ N are integers.
 
 ### Multinomial Distribution
 “multi-dimensional” generalization of binomial distribution
+
+**Trials with multiple outcomes**: There are i.i.d. trials, each having $m$ possible outcomes, where the probability of the $i$th outcome is $p_i$. Let $X_i$ be the total number of $i$th kind of outcome
+
+Modelize: **Balls-into-bin model**: Throw $n$ balls into $m$ bins, where each bin has probability $p_i$ of receiving the ball.
+Let $X_i$ be the number of balls in the $i$th bin.
+
