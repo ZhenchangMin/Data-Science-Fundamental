@@ -112,7 +112,7 @@ p_{Y}(y)=\sum_{x: f(x)=y}p_{X}(x)
 $$
 That is the sum of all pmf where $f(x)=y$.
 
-### Bernoulli Trial
+## Bernoulli Trial
 A bernoulli trial is an experiment with two possible outcomes: success or failure.
 A **bernoulli random variable** $X$ takes in values in $\{0,1\}$, and its pmf is:
 $$
@@ -228,3 +228,30 @@ $$
 X_i\sim Bin(n,p_i)
 $$
 The marginal distribution of $X_i$ is $Bin(n,p_i)$.
+
+### Poisson Distribution
+Take a look at Binomial Distribution, we know that it is the distribution of number of successes in $n$ trials with probability of success $p$.
+In real life usually $n$ is very large, and it is unknown, but we know the **expectation** $np=\lambda$, so we have:
+$$
+p_{Bin(n,\lambda/n)}(k)=\binom{n}{k}(\frac{\lambda}{k})^k(1-\frac{\lambda}{k})^{n-k}
+$$
+When n is extremely large, $\binom{n}{k}$ can be viewed as 1, and $(1-\frac{\lambda}{k})^{n-k}=(1-\frac{\lambda}{k})^{n}(1-\frac{\lambda}{k})^{-k}$.
+$(1-\frac{\lambda}{k})^{-k}$ can be viewed as 1 when $n\to\infty$, so we focus on $(1-\frac{\lambda}{k})^{n}$.
+$\lim\limits_{n\to\infty}(1-\frac{\lambda}{k})^{n}=e^{-\lambda}$
+And in conclusion, we have:
+$$
+p_{Bin(n,\lambda/n)}(k)=\frac{\lambda^k}{k!}e^{-\lambda}
+$$
+
+A Poisson random variable $X$ takes value in $\{0,1,2,\dots\}$, and its pmf is:
+$$
+p_{X}(k)=Pr(X=k)=\frac{\lambda^k}{k!}e^{-\lambda}
+$$
+We say that $X$ follows the **Poisson distribution** with parameter $\lambda>0$, denoted $X\sim Pois(\lambda)$.
+
+#### Sum of Poisson Random Variables
+Given that if $X\sim Bin(n_1,p)$, $Y\sim Bin(n_2,p)$, $X+Y\sim Bin(n_1+n_2,p)$
+Does Poisson distribution hold for $X\sim Pois(\lambda_1)$ and $Y\sim Pois(\lambda_2)$, then $X+Y\sim Pois(\lambda_1+\lambda_2)$?
+![1758782385675](image/lec3/1758782385675.png)
+
+#### Poisson Approximation
