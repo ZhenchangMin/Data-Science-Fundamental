@@ -255,3 +255,14 @@ Does Poisson distribution hold for $X\sim Pois(\lambda_1)$ and $Y\sim Pois(\lamb
 ![1758782385675](image/lec3/1758782385675.png)
 
 #### Poisson Approximation
+For $(X_1,X_2,\dots,X_m)$ following multinomial distribution with parameters $m$, $n$ and $p=(p_1,p_2,\dots,p_m)\in[0,1]^m$ such that $p_1+p_2+\dots p_m=1$, and $(Y_1,Y_2,\dots,Y_m)$ $Y_i$ following Poisson distribution with parameter $\lambda_i=np_i$, n balls into m bins.
+Then if $\sum_{i=1}^mY_i=n$, $(X_1,X_2,\dots,X_m)$ and $(Y_1,Y_2,\dots,Y_m)$ are identically distributed.
+![1758786164851](image/lec3/1758786164851.png)
+$Pr(Y_i+\dots+Y_m=n)=p_{Y_i+\dots+Y_m}(n)$, using sum of poisson variables we get $\frac{e^{-n}n^n}{n!}$
+And for the numerator we multiply them together cuz they're all independent.
+
+### Balls into Bins
+Throw n balls into m bins uniformly at random(u.a.r.).
+![1758787080871](image/lec3/1758787080871.png)
+
+## Expectation
