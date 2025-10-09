@@ -354,3 +354,23 @@ Only if the absolute convergence of the random variables $X_1,X_2,\dots$ holds.
 And if there're random number of random variables, it might not obey the linearity of expectation.
 
 ### Conditional Expectation
+The conditional expectation of a discrete random variable X given that event A occurs, is defined by:
+$$
+\mathbb{E}(X|A)=\sum_{x\in\Omega}x\Pr(X=x|A)
+$$
+![1760051012673](image/lec3/1760051012673.png)
+
+#### Conditional Distribution
+(X | A) can now be seen as a new random variable, and its pmf is:
+$$
+p_{X|A}(x)=Pr(X=x|A)
+$$
+
+#### Law of Total Expectation
+![1760050940979](image/lec3/1760050940979.png)
+
+#### Jensen's Inequality
+![1760051059211](image/lec3/1760051059211.png)
+
+#### Averaging Principle
+![1760051159168](image/lec3/1760051159168.png)
