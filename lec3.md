@@ -266,3 +266,91 @@ Throw n balls into m bins uniformly at random(u.a.r.).
 ![1758787080871](image/lec3/1758787080871.png)
 
 ## Expectation
+The **expectation** or **mean** of a random variable $X$ is defined as:
+$$
+\mathbb{E}(X)=\sum_{x\in\Omega}xp_X(x)
+$$
+$p_X$ is the pmf of $X$, and $p_X(x)$ is the probability of $X$ taking value $x$.
+
+### Expectation of Indicator
+For Bernoulli random variable $X$ with parameter $p$, we have:
+$$
+\mathbb{E}(X)=0\times (1-p)+1\times p=p
+$$
+
+For indicator random variable $I_A$ of event $A$, we have:
+$$
+\mathbb{E}(I_A)=Pr(A)=p_A
+$$
+
+### Expectation of Poisson Random Variable
+For Poisson random variable $X$ with parameter $\lambda$, we have:
+$$
+\mathbb{E}(X)=\lambda
+$$
+![1760047355864](image/lec3/1760047355864.png)
+
+### Change of Variables
+For random variable $X$ or random variable $X = (X_1,X_2,\dots,X_m)$, we have:
+$$
+\mathbb{E}(f(X))=\sum_{x\in\Omega}f(x)p_X(x)
+$$
+
+### Linearity of Expectation
+![1760047661818](image/lec3/1760047661818.png)
+
+### Expectation of Binomial Random Variable
+For binomial random variable $X$ with parameters $n$ and $p$, we have:
+$$
+\mathbb{E}(X)=np
+$$
+![1760047932063](image/lec3/1760047932063.png)
+
+### Expectation of Geometric Random Variable
+For geometric random variable $X$ with parameter $p$, we have:
+$$
+\mathbb{E}(X)=\frac{1}{p}
+$$
+![1760048280919](image/lec3/1760048280919.png)
+
+### Expectation of Hypergeometric Random Variable
+For hypergeometric random variable $X$ with parameters $n$, $N$, $M$ and $p$, we have:
+$$
+\mathbb{E}(X)=\frac{M}{nN}
+$$
+![1760048494141](image/lec3/1760048494141.png)
+
+
+### Expectation of Negative Binomial Random Variable
+For negative binomial random variable $X$ with parameters $r$ and $p$, we have:
+$$
+\mathbb{E}(X)=\frac{r(1-p)}{p}
+$$
+![1760048486198](image/lec3/1760048486198.png)
+
+### Tail Sum for Expectation
+For nonnegative random variable $X$ that takes values in $\{0,1,2,\ldots\}$
+
+$$\mathbb{E}[X] = \sum_{k=0}^\infty \Pr[X > k]$$
+
+To prove this, let $I_k$ be the indicator random variable of the event $X>k$.
+So we know $X = \sum_{k=0}^\infty I_k$
+By linearity of expectation, we have:
+$$
+\mathbb{E}[X] = \sum_k\mathbb{E}[I_k]=\sum_k \Pr[X>k]
+$$
+
+### Principle of Inclusion-Exclusion
+![1760049541723](image/lec3/1760049541723.png)
+![1760049554764](image/lec3/1760049554764.png)
+
+### Boole-Bonferroni Inequality
+![1760049925346](image/lec3/1760049925346.png)
+
+### Limitation of Linearity of Expectation
+For infinite random variables $X_1,X_2,\dots$, the expectation of their sum is not necessarily the sum of their expectations.
+Only if the absolute convergence of the random variables $X_1,X_2,\dots$ holds.
+
+And if there're random number of random variables, it might not obey the linearity of expectation.
+
+### Conditional Expectation
