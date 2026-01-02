@@ -41,16 +41,20 @@ circle" shall be more rigorously defined.
 ## Probability Space
 
 ### Sample Space
+
 Sample Space $\Omega$: **set** of **all possible outcomes** of an experiment(set of **samples**)
 Example: all six sides of a dice; all outcomes of a sequence of coin tosses;...
 Each $\omega \in \Omega$ is called a **sample** or **outcome** of the experiment.
 An **event** is a subset A of $\Omega$.
 
 For **discrete probability space** (where Ω is finite or countably infinite):
+
 - probability mass function (pmf) p: $\Omega \rightarrow[0,1]$, satisfying $\Sigma_{\omega \in \Omega}p(\omega)=1$
 - the probability of event $A\subseteq \Omega$ is given by $Pr(A) = \Sigma_{\omega \in A}p(\omega)$
 
 $2^{\Omega}$: The collection of **all possible subsets** of $\Omega$, including the empty set and Omega itself.
+
+Thus can represent all possible events.
 
 - $\Phi$ is the impossible event
 - $\Omega$ is the certain event
@@ -59,7 +63,9 @@ $2^{\Omega}$: The collection of **all possible subsets** of $\Omega$, including
 - If $A_1, A_2, \dots, A_n \in \Sigma$, then $A_1 \cup A_2 \cup \dots \cup A_n \in \Sigma$
 
 ### $\sigma$-Algebra
+
 A family $\Sigma$: subsets of $\Omega$ is called a **$\sigma$-algebra** if:
+
 - $\Phi \in \Sigma$
 - $\Omega \in \Sigma$
 - If $A \in \Sigma$, then $A^{c} \in \Sigma$, $A^{c} = \Omega \setminus A$, in omega and not in A.
@@ -68,14 +74,17 @@ A family $\Sigma$: subsets of $\Omega$ is called a **$\sigma$-algebra** if:
 Examples: $\Sigma = \{ \Phi, \Omega, A, A^{c}\}$
 
 ### Probability Measure
+
 Let $\Sigma\subseteq 2^\Omega$ be a $\sigma$-algebra.
 A probability measure (also called probability law) Pr on sample space $\Omega$ (with events $\Sigma$) is a function Pr : $\Sigma\rightarrow$[0,1] satisfying:
+
 - Normalized: $Pr(\Omega) = 1$
 - Additive for disjoint $A_{1}, A_{2}, \dots\in\Sigma$ : Pr($\cup_{i}A_{i}$) = $\Sigma_{i}Pr(A_{i})$
 
 The triple $(\Omega, \Sigma, Pr)$ is called a **probability space**.
 
 ### Basic Properties of Probability
+
 - Pr($A^{c}$) = 1 - Pr($A$)
 - Pr($\Phi$) = 0
 - Pr($\Omega$) = 1
@@ -84,6 +93,7 @@ The triple $(\Omega, \Sigma, Pr)$ is called a **probability space**.
 - Pr($A_1 \cup A_2 \cup \dots \cup A_n$) = Pr($A_1$) + Pr($A_2$) + $\dots$ + Pr($A_n$)
 
 ### Union Bond
+
 Also known as Boole's inequality.
 for events $A_1, A_2, \dots, A_n \in \Sigma$:
 Pr($\cup_{i}A_{i}$) $\leq$ $\Sigma_{i}Pr(A_{i})$
@@ -92,6 +102,7 @@ What is the probability that the machine will work?
 Pr[All parts are fine] = 1 - Pr[At least one part breaks down] $\leq 1-np$
 
 ### Principles of Inclusion-Exclusion
+
 For events $A_1, A_2, \dots, A_n \in \Sigma$:
 Pr($\cup_{i}A_{i}$) = $\Sigma_{i}Pr(A_{i})$ - $\Sigma_{i<j}Pr(A_{i}\cap A_{j})$ + $\Sigma_{i<j<k}Pr(A_{i}\cap A_{j}\cap A_{k})$ - $\dots$=
 $\Sigma_{i=1}^n(-1)^{n-i}Pr(A_1\cap A_2\cap \dots \cap A_i)$
@@ -100,6 +111,7 @@ Another representation: $\Pr(\bigcup_{i = 1}^{n}A_i)=\sum_{k = 1}^{n}(-1)^{k - 1
 $\sum_{S \in \binom{\{1,2,\cdots,n\}}{k}}\Pr(\bigcap_{i \in S}A_i)$ means that we select $k$ events from $n$ events and calculate the probability that all $k$ events happen. All selections should be calculated.
 
 ### Derangement
+
 The probability that a random permutation has no fixed point, there is no i that $\pi(i) = i$.
 Pr gets to $\frac{1}{e}$ when n gets to infinity.
 
@@ -116,8 +128,12 @@ $\Pr(\bigcup_{i = 1}^{n}A_i)=\sum_{k = 1}^{n}\binom{n}{k}(-1)^{k - 1}\frac{(n - 
 So the probability of derangement $Pr(\bigcap_{i = 1}^{n}A_i^c) = 1 - Pr(\bigcup_{i = 1}^{n}A_i) = 1+\sum^n_{k=1}\frac{(-1)^k}{k!}=\sum_{k=0}^n\frac{(-1)^k}{k!}$
 
 ### Classical Examples of Probability Space
+
 #### Classic Probability
+
 For finite sample space $\Omega$, each outcome $a\in\Omega$ has equal probability.
 Pr($a$) = $\frac{|A|}{|\Omega|}$
+
 #### Geometric Probability
+
 continuous probability space where is $Pr(A)$calculated as some geometric measure of $A$
