@@ -90,7 +90,7 @@ The triple $(\Omega, \Sigma, Pr)$ is called a **probability space**.
 - Pr($\Omega$) = 1
 - Pr(A\B) = Pr(A) - Pr($A\cap B$)
 - $A\subseteq B$ $\rightarrow$ Pr($A$) $\leq$ Pr($B$)
-- Pr($A_1 \cup A_2 \cup \dots \cup A_n$) = Pr($A_1$) + Pr($A_2$) + $\dots$ + Pr($A_n$)
+- Pr($A_1 \cup A_2 \cup \dots \cup A_n$) = Pr($A_1$) + Pr($A_2$) + $\dots$ + Pr($A_n$) for disjoint events $A_i$'s.
 
 ### Union Bond
 
@@ -132,7 +132,7 @@ So the probability of derangement $Pr(\bigcap_{i = 1}^{n}A_i^c) = 1 - Pr(\bigcup
 #### Classic Probability
 
 For finite sample space $\Omega$, each outcome $a\in\Omega$ has equal probability.
-Pr($a$) = $\frac{|A|}{|\Omega|}$
+Pr($A$) = $\frac{|A|}{|\Omega|}$
 
 #### Geometric Probability
 
