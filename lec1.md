@@ -136,4 +136,4 @@ Pr($A$) = $\frac{|A|}{|\Omega|}$
 
 #### Geometric Probability
 
-continuous probability space where is $Pr(A)$calculated as some geometric measure of $A$
+Continuous probability space where is $Pr(A)$calculated as some geometric measure of $A$
