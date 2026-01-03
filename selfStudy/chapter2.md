@@ -61,3 +61,13 @@ $$f(x)=\begin{cases}\frac{1}{b-a}, & a \leq x \leq b \\ 0, & \text{其他} \end{
 $$F(x)=\begin{cases}0, & x < a \\ \frac{x-a}{b-a}, & a \leq x \leq b \\ 1, & x > b \end{cases}$$
 
 ### 指数分布
+X的概率密度函数为
+$$f(x)=\begin{cases}\lambda e^{-\lambda x}, & x \geq 0 \\ 0, & x < 0 \end{cases}$$
+记为$X \sim Exp(\lambda)$。
+
+### 正态分布
+X的概率密度函数为
+$$f(x)=\frac{1}{\sqrt{2 \pi} \sigma} e^{-\frac{(x-\mu)^2}{2 \sigma^2}}, -\infty < x < +\infty$$
+记为$X \sim N(\mu, \sigma^2)$。
+其中，$\mu$为均值，$\sigma^2$为方差。
+曲线关于$x=\mu$对称，称为正态曲线或高斯曲线。
